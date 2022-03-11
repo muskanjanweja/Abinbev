@@ -1,23 +1,36 @@
-import { render } from '@testing-library/react';
-import React from 'react'
+import React from "react";
 import { useHistory } from "react-router-dom";
+import Navbar from "../../Navbar/Navbar";
+import "./Home.css";
+import homepage from "../../Pages/homepage.jpg";
 
 const Home = () => {
-  // const history = useHistory();
+  const history = useHistory();
 
-  //const coursesPage = () => {
-  //history.push("/InternHome")
-  //}
-  render()
-  {
-    console.log("AA")
-    return (
-      <div>
-        < h1 > Home</h1 >
-      </div>
-    )
-  }
-}
+  return (
+    <div>
+      <Navbar />
+      <h1> WELCOME!!!</h1>
+      <p>Click to check the progress...</p>
+      <button
+        style={{ marginLeft: "18%" }}
+        type="button"
+        class="btn btn-primary"
+        onClick={() => history.push("/internhome")}
+      >
+        Get Started
+      </button>
+      <img
+        style={{
+          height: "500px",
+          position: "absolute",
+          right: "0",
+          bottom: "15%",
+        }}
+        src={homepage}
+      ></img>
+    </div>
+  );
+};
 
 export default Home;
-
